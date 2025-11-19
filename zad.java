@@ -1,31 +1,23 @@
 public class zad{
 	public static void main(String[] args){
-		int[] tabA = new int[(int)(Math.random()*10) + 1];
-		int[] tabB = new int[(int)(Math.random()*10) + 1];
-		int[] tabC = new int[(int)(Math.random()*10) + 1];
-		int[][] abc = {tabA, tabB, tabC};
-		
-		for(int i = 0; i < tabA.length; i++){
-			tabA[i] = (int)(Math.random()*10) + 1;
-			IO.print(tabA[i] + " ");
-		}
-		IO.println();
-		for(int i = 0; i < tabB.length; i++){
-			tabB[i] = (int)(Math.random()*10) + 1;
-			IO.print(tabB[i] + " ");
-		}
-		IO.println();
-		for(int i = 0; i < tabC.length; i++){
-			tabC[i] = (int)(Math.random()*10) + 1;
-			IO.print(tabC[i] + " ");
-		}
-		IO.println();
-		
-		
-		for(int i = 0; i < abc.length; i++){
-			for(int j = 0; j < abc[i].length; j++){
-				 IO.print(abc[i][j] + " ");
+		float[][] qube = new float[8][8];
+		for(int i = 0; i < qube.length; i++){
+			for(int j = 0; j < qube[i].length; j++){
+				qube[i][j] = (float)(Math.random() * 10) + 1;
+				IO.print(qube[i][j] + " ");
 			}
+		IO.println();
 		}
+		float rightPrzek = 0;
+		for(int y = 0, x = 0; x < qube.length; y++, x++)
+			rightPrzek += qube[x][y];
+			
+		IO.println(rightPrzek);
+		
+		float leftPrzek = 0;
+		for(int y = 0, x = qube.length - 1; x >= 0; y++, x--)
+			leftPrzek += qube[x][y];
+		
+		IO.println(leftPrzek);
 	}
 }
